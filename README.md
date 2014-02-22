@@ -59,7 +59,7 @@ configured in Gruntfile.js
 
 ## Getting it installed on a router and PTP_VARNAME_PTP variables
 
-The ptp-splash-page htdocs directory is consumed as part of the FOOCAB.pl build process of the [openwrt-files repo](https://github.com/personaltelco/openwrt-files/)
+The ptp-splash-page htdocs directory is consumed as part of the FOOCAB.pl build process of the [ptp-openwrt-files repo](https://github.com/personaltelco/ptp-openwrt-files/)
 
 Specifically these files are placed in the /www directory
 
@@ -67,9 +67,9 @@ The FOOCAB.pl script replaces all PTP_VARNAME_PTP values with information in thi
 
 https://github.com/personaltelco/openwrt-files/blob/master/nodedb.txt
 
-TODO decide how to integrate the pages here into the open-wrt repo's www directory
+TODO decide how to integrate the pages here into the ptp-open-wrt repo's www directory
 
-https://github.com/personaltelco/openwrt-files/tree/master/www
+https://github.com/personaltelco/ptp-openwrt-files/tree/master/www
 
 I think it should be a git submodule of a sparse checkout like this:  
 https://gist.github.com/johnhunter/3333533
