@@ -13,7 +13,17 @@ ben@bnf.net
 When a user connects to a node, usually via wifi, they cannot immediately
 access the internet.  They are bound within a captive portal.  When they 
 try to browse to any web pages in a browser (http only) they are redirected
-by NoCatAuth to our splash page.
+by NoCatAuth to our splash page.  Once they have accepted the terms of service
+they are then allowed to access the internet. 
+
+In this way, the splash page is one of our most frequents points of interaction
+with the users of the PTP network.
+
+In addition to it's primary funciton it is an opportunity
+    - to educate folks about PTP 
+    - to acknowledge the node host
+    - to ask for donations 
+    - to acknowledge donors and contributors
 
 The splash page loads from the router and then the loaded page makes calls
 to http://static.personaltelco.net which are the static files from the
@@ -47,9 +57,15 @@ which will call 'grunt'.  It will minifiy and combine the javascript from ./src 
 configured in Gruntfile.js
 
 
-## Getting it installed on a router
+## Getting it installed on a router and PTP_VARNAME_PTP variables
 
 The ptp-splash-page htdocs directory is consumed as part of the FOOCAB.pl build process of the [openwrt-files repo](https://github.com/personaltelco/openwrt-files/)
+
+Specifically these files are placed in the /www directory
+
+The FOOCAB.pl script replaces all PTP_VARNAME_PTP values with information in this file:
+
+https://github.com/personaltelco/openwrt-files/blob/master/nodedb.txt
 
 TODO decide how to integrate the pages here into the open-wrt repo's www directory
 
@@ -59,7 +75,7 @@ I think it should be a git submodule of a sparse checkout like this:
 https://gist.github.com/johnhunter/3333533
 
 
-The original requirements 
+The original requirements, which lays out just a bit of thought around the splashpage
 
 https://personaltelco.net/wiki/NewCaptivePortalFeatures
 
