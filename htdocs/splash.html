@@ -490,8 +490,10 @@ prefer to remain anonymous, please check the box below.
          apibase is used by ptp-splash-server.min.js to locate the api 
     --> 
     <script>
-    	var nodeName = 'PTP_NODE_PTP';
-        var apibase = 'http://api.personaltelco.net/'; 
+        var pageConf = {
+                nodeName = 'PTP_NODE_PTP',
+                version = '0.0.1'
+        }
     </script>
     <script src="http://static.personaltelco.net/js/ptp-splash-server.min.js"></script>
   </body>

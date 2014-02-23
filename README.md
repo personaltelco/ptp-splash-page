@@ -35,16 +35,36 @@ folks to easily understand which piece of the puzzle should be worked on at each
 
 ##  Install and build
 
+````bash
+    git clone git@github.com:personaltelco/ptp-splash-page.git
+````
+
+If you're just looking to deploy the splash page to a router then there is no need to 
+setup the build the environment.  Everything is in htdocs and those are just
+static files.
+
+### development dependencies
+
+A recent nodejs environment is required.  If you're on Ubuntu 12.04 these instructions will be helpful:
+
+https://github.com/joyent/node/wiki/Installing-Node.js-via-package-manager#wiki-ubuntu-mint-elementary-os
+
+
+### editing the splash page
+
 The splash page is a single page app built using Twitter Bootstrap.
 
 Everything that gets loaded to the browser FROM THE ROUTER lives in ./htdocs
 
-The ./src directory is built using 'grunt' a nodejs build tool
+The HTML page itself, splash.html lives at ./htdocs/splash.html and can be edited
+there directly.
+
+The supporting javascript ptp-splash-page.min.js is "built" from files in the
+./src directory using 'grunt', a nodejs build tool.
 
 to setup the build environment
 
 ````bash
-    git clone git@github.com:personaltelco/ptp-splash-page.git
     npm install
 ````
 then run
@@ -56,6 +76,13 @@ then run
 which will call 'grunt'.  It will minifiy and combine the javascript from ./src as 
 configured in Gruntfile.js
 
+Some of the content is dynamically loaded from the server via theses items in splash.html
+
+    <script>
+        var nodeName = 'PTP_NODE_PTP';
+        var apibase = 'http://api.personaltelco.net/'; 
+    </script>
+    <script src="http://static.personaltelco.net/js/ptp-splash-server.min.js"></script>
 
 ## Getting it installed on a router and PTP_VARNAME_PTP variables
 
