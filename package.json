@@ -3,11 +3,7 @@
   "version": "0.0.1",
   "description": "personal telco project splash page",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
-  },
-  "scripts": { 
-      "test": "make test" 
+    "test": "make test"
   },
   "keywords": [
     "splash",
@@ -24,6 +20,7 @@
     "grunt-exec": "~0.4.2",
     "grunt-contrib-uglify": "~0.2.7",
     "grunt-contrib-jshint": "~0.8.0",
-    "grunt-cli": "~0.1.13"
+    "grunt-cli": "~0.1.13",
+    "jquery": "~2.1.0"
   }
 }

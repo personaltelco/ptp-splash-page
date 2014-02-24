@@ -16,7 +16,7 @@ module.exports = function (grunt) {
 			},
 			build: {
 				src: [
-				  'src/bower_components/jquery/jquery.min.js',
+				  'node_modules/jquery/dist/jquery.min.js',
                   'src/custom_bootstrap/js/bootstrap.min.js',
                   'src/*.js'
                   ],
