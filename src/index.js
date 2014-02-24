@@ -44,3 +44,26 @@ function smoothScrolling() {
 
 	});
 }
+
+// http://stackoverflow.com/questions/5448545/how-to-retrieve-get-parameters-from-javascript
+function getParams() {
+    var prmstr = window.location.search.substr(1);
+    return prmstr != null && prmstr != "" ? toAssocArray(prmstr) : {};
+}
+
+function toAssocArray( prmstr ) {
+  var params = {};
+  var prmarr = prmstr.split("&");
+  for ( var i = 0; i < prmarr.length; i++) {
+      var tmparr = prmarr[i].split("=");
+      params[tmparr[0]] = tmparr[1];
+  }
+  return params;
+}
+
+var params = getParams();
+
+if (params.nodeName) {
+    pageConf.nodeName = params.nodeName;
+}
+
