@@ -21,6 +21,7 @@
     "grunt-contrib-uglify": "~0.2.7",
     "grunt-contrib-jshint": "~0.8.0",
     "grunt-cli": "~0.1.13",
-    "jquery": "~2.1.0"
+    "jquery": "~2.1.0",
+    "grunt-contrib-cssmin": "~0.8.0"
   }
 }
