@@ -45,8 +45,9 @@ module.exports = function(grunt) {
                 watch : {
                     scripts : {
                         files : [ 'src/*.js', 'src/dustjs/*.html',
-                                'htdocs/js/loader.js', 'htdocs/css/*.css',
+                                'src/css/*.css',
                                 'htdocs/*.html' ],
+                        tasks: ['uglify','cssmin'],
                         options : {
                             spawn : false,
                             livereload : true,
@@ -64,6 +65,7 @@ module.exports = function(grunt) {
 
     grunt.loadNpmTasks('grunt-nodemon');
     grunt.loadNpmTasks('grunt-contrib-jshint');
+
     // Default task(s).
     grunt.registerTask('default', [ 'uglify', 'cssmin' ]);
 

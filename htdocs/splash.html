@@ -183,12 +183,19 @@ prefer to remain anonymous, please check the box below.
 
 	  <!-- STATUS -->
       <div id="status" class="row featurette">
-        <div class="col-md-2">&nbsp;</div>
+        <div id="statusSidebar" class="col-md-2 col-centered">
+            <span class="fa-stack" id="statusSidebarIcons">
+                <i class="fa fa-sitemap fa-stack-1x"></i>
+                <i class="fa fa-ban fa-stack-2x text-danger"></i>
+            </span>
+            <h3 id="statusSidebarWords" class="text-danger">not conected</h3>
+        </div>
         <div class="col-md-4">
           <h2 class="featurette-heading">Node Status</h2>
           <p class="lead">For PTP_NODE_PTP at PTP_NODENAME_PTP</p>
 		  <p>This page is available at <a href="http://node.personaltelco.net">http://node.personaltelco.net</a> when you are connected to this wifi network.
 		  <p>More information on this node is available at <a href="http://www.personaltelco.net/wiki/PTP_NODE_PTP">http://www.personaltelco.net/wiki/PTP_NODE_PTP</a> after you have authenticated with the node
+          <p>Please <a href="#contact">contact us</a> if you feel that you're having a problem
         </div>
         <div class="col-md-6">
             <p>AP Host Name is PTP_HOSTNAME_PTP</p>
@@ -198,7 +205,7 @@ prefer to remain anonymous, please check the box below.
 			<p>$ConnectionCount session(s) are active at $LocalTime.</p>
 			<p>$UserTable</p>
 			<p>This gateway is running NoCatAuth $Version, with a session timeout of $LoginTimeout seconds and an idle timeout of $IdleTimeout seconds.</p>
-		  	<p id="works">The PTP main server has not been contacted.</p>
+		  	<p id="works">The PTP main server has not been contacted, which doesn't necessarily mean your internet connection won't work. It just means this webpage can't see our server.</p>
         </div>
       </div>
 
@@ -207,22 +214,25 @@ prefer to remain anonymous, please check the box below.
 	  <!-- ABOUT -->
       <div id="about" class="row featurette">
         <div class="col-md-3">
-
           <img class="featurette-image img-responsive center-block" src="images/ptp-logo-comm-wire-223x223.png"  alt="Community Wirless Network">
+          <div id="aboutNodes"></div>
         </div>
         <div class="col-md-9">
           <h2 class="featurette-heading">Personal Telco is an All Volunteer Non Profit <span class="text-muted">Running a City Wide Network</span></h2>
           <p class="lead">We are dedicated to the idea that users have a central role in how their communications networks are operated.</p>
+          <div id="aboutVideo"></div>
     	  <p>We educate folks on how they can operate a node and participate in a free wifi network for the common good.  Our goal is to have people and businesses in every corner of the city and region offering connectivity to each other.</p>
           <p>If you're a business owner it's likely you're already paying for internet service.  Most businesses use a miniscual amount of the bandwidth they have bought.  We can help you offer that extra bandwidth to your customers while having no impact on your existing network and operations.  We just need to connect to one ethernet port on an existing router.</p>
           <p>As a homeowner or renter you may be interested in participating by either sharing your residential network connection with your neighbors or connecting to an existing PTP Node as a repeater.  Your participation in PTP's network helps us to smother the city in free wifi.  There is plenty of bandwidth to go around.</p>
 		  <p>We offer node hosts support and equipment and advize them on such things as network providers and networking equipment and try to be responsive to outages.</p>
           <p>Join the cause and help us extend the PTP Network throughout the Portland metropolitan area!
-          <div id="aboutDynamic"></div>
           <p>&nbsp;</p>
           <p><a class="btn btn-default" href="#contact" role="button">Contact Us &raquo;</a></p>
         </div>
       </div>
+
+      <!-- NEWS - loaded dynamically -->
+      <div id="newsFromServer"></div>
 
       <hr class="featurette-divider">
 
@@ -490,7 +500,7 @@ prefer to remain anonymous, please check the box below.
     <script>
         var pageConf = {
                 nodeName: 'PTP_NODE_PTP',
-                version: '0.0.1'
+                version: '0.0.2'
         }
     </script>
     <script src="http://static.personaltelco.net/js/ptp-splash-server.min.js"></script>

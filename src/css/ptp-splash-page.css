@@ -97,6 +97,18 @@ body {
 /* Donate
 ------------------- */
 
+/* Status
+------------------- */
+
+#statusSidebarIcons {
+  font-size: 6em;
+}
+
+#statusSidebarWords {
+    width: 100%;
+    margin: 0 auto;
+}
+
 
 /* About
 ------------------- */
