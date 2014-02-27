@@ -18,7 +18,7 @@ module.exports = function(grunt) {
                     build : {
                         src : [ 'node_modules/jquery/dist/jquery.min.js',
                                 'src/custom_bootstrap/js/bootstrap.min.js',
-                                'src/*.js' ],
+                                'src/js/*.js'],
                         dest : 'htdocs/js/<%= pkg.name %>.min.js'
                     }
                 },
@@ -44,13 +44,13 @@ module.exports = function(grunt) {
 
                 watch : {
                     scripts : {
-                        files : [ 'src/*.js', 'src/dustjs/*.html',
+                        files : [ 'src/js/*.js', 'src/dustjs/*.html',
                                 'src/css/*.css',
                                 'htdocs/*.html' ],
                         tasks: ['uglify','cssmin'],
                         options : {
                             spawn : false,
-                            livereload : true,
+                            livereload : false,
                         },
                     },
                 },
