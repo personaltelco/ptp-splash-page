@@ -51,7 +51,13 @@
         </div>
 
       </div>
-    <!-- Carousel
+    <!-- MobileHeader aka NON Carousel - note vissible-xs shows this piece on mobile
+    ================================================== -->
+    <div id="MobileHeader" class="visible-xs">
+         <h1>This is PTP Node <span class="PTP_NODE">PTP_NODE_PTP</span></h1>
+         <p>Since 2000 Personal Telco has helped node hosts like <span class="PTP_NODENAME">PTP_NODENAME_PTP</span> to offer free WIFI
+    </div>
+    <!-- Carousel - note hidden-xs hides the carousel on mobile
     ================================================== -->
     <div id="Carousel" class="carousel slide hidden-xs" data-ride="carousel" data-interval="7500">
       <!-- Indicators -->
@@ -84,13 +90,13 @@
             <div class="carousel-caption">
           	<div><img class="img-circle" src="images/uncle-sam-pointing-finger-150x200.jpg"/></div>
               <h1>You Could Host a PTP Node</h1>
-              <p>Our goal is to smother the region with fantastic free WIFI.  Hosting a Personal Telco Project node on your network is easy to do.</p>
+              <p>Our goal is to smother the region with fantastic free WIFI.  Hosting a Personal Telco Project Node on your network is easy to do.</p>
             </div>
           </div>
         </div>
       </div>
-      <a class="left carousel-control" href="#Carousel" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
-      <a class="right carousel-control" href="#Carousel" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
+      <a class="left carousel-control hidden-xs" href="#Carousel" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
+      <a class="right carousel-control hidden-xs" href="#Carousel" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
     </div><!-- /.carousel -->
 
     <p>&nbsp;</p>
@@ -141,7 +147,9 @@ prefer to remain anonymous, please check the box below.
 <input type="hidden" name="no_note" value="0">
 <input type="hidden" name="currency_code" value="USD">
 <input type="hidden" name="bn" value="PP-DonationsBF:btn_donateCC_LG.gif:NonHostedGuest">
-<input type="image" class="center-block" src="images/paypal-donate-button-330x153.jpg" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+
+<button type="submit" name="submit" alt="PayPal - The safer, easier way to pay online!" class="btn btn-primary btn-lg center-block"><i class="fa fa-dollar"></i> Donate</button>
+
 <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
 
 </div>
@@ -150,7 +158,12 @@ prefer to remain anonymous, please check the box below.
 </form>
 		  
         </div>
-        <div id="donors" class="col-md-6">
+        <div id="donorCol" class="col-md-6">
+		    <div class="happyIcon">
+                <i class="fa fa-star-o"></i>
+	    	</div>
+	        <div id="donors">
+	        </div>
         </div>
       </div>
 
@@ -205,7 +218,7 @@ prefer to remain anonymous, please check the box below.
 			<p>$ConnectionCount session(s) are active at $LocalTime.</p>
 			<p>$UserTable</p>
 			<p>This gateway is running NoCatAuth $Version, with a session timeout of $LoginTimeout seconds and an idle timeout of $IdleTimeout seconds.</p>
-		  	<p id="works">The PTP main server has not been contacted, which doesn't necessarily mean your internet connection won't work. It just means this webpage can't see our server.</p>
+		  	<p id="works" class="text-danger">The PTP main server has not been contacted, which doesn't necessarily mean your internet connection won't work. It just means this webpage can't see our server.</p>
         </div>
       </div>
 

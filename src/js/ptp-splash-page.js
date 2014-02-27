@@ -1,5 +1,6 @@
 
 $(document).ready(function() {
+    console.log('document.ready ptp-splash-page');
     
     // donors can opt out of public acknowledgement
     // by clicking on the checkbox in the donors section
@@ -7,10 +8,14 @@ $(document).ready(function() {
     // consumed by the donor polling tools that back
     // http://api.personaltelco.net/api/v0/donors
 	$('#optoutpublic').click(function() {
+	    console.log('optout clicked');
+	    
 		if ($('#optoutpublic').is(':checked')) {
+		    console.log('donor is opting out');
 			$('#item_number').val('splash2014_opt_out');
 			$('#item_name').val('Personal Telco Project - Anonymous Donation');
 		} else {
+		    console.log('donor is opting in');
 		    $('#item_number').val('splash2014');
 		    $('#item_name').val('Personal Telco Project - Donation');
 		}

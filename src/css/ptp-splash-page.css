@@ -97,6 +97,35 @@ body {
 /* Donate
 ------------------- */
 
+#donorCol {
+    position: relative;   
+}
+
+.happyIcon {
+    position:absolute;
+    left: 50%;
+    margin: auto;
+    font-size: 20em;
+    color: gold;
+    z-index: -1;
+}
+
+.happyIcon i {
+    z-index: -10;    
+    position: relative;
+    left: -50%;  
+}
+
+#donors {
+    z-index: 10;
+}
+
+.donorName {
+    font-size: 3em;
+}
+
+
+
 /* Status
 ------------------- */
 
