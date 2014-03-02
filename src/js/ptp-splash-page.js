@@ -56,7 +56,7 @@ function smoothScrolling() {
 	});
 }
 
-function internetWorks(cb) {
+function internetWorks() {
     
     // test the static server
     // test the apiserver
@@ -72,6 +72,5 @@ function internetWorks(cb) {
     // tempting to load some overall network stats
     // number of nodes active
     // number of connected users
-    cb();
 }
 
