@@ -52,31 +52,42 @@ https://github.com/joyent/node/wiki/Installing-Node.js-via-package-manager#wiki-
 
 ### editing the splash page
 
-The splash page is a single page app built using Twitter Bootstrap.
+The splash page is a single page app built using Twitter Bootstrap and 'dust' templates using 'grunt', a nodejs build tool.
 
 Everything that gets loaded to the browser FROM THE ROUTER lives in ./htdocs
 
-The HTML page itself, splash.html lives at ./htdocs/splash.html and can be edited
-there directly.
+The HTML page itself, splash.html is built from a dust template at ./src/dust/splash.dust.html and should be edited
+there.
 
-The supporting javascript ptp-splash-page.min.js is "built" from files in the
-./src directory using 'grunt', a nodejs build tool.
+The supporting javascript ptp-splash-page.min.js is built from files in the
+./src directory 
 
 to setup the build environment
 
 ````bash
     npm install
 ````
+
+create/edit the file config/config.json based on config.json.example
+
+
 then run
 
 ````
     make
 ````
 
-which will call 'grunt'.  It will minifiy and combine the javascript from ./src as 
-configured in Gruntfile.js
+which will call 'grunt'.  It will 
+   - minifiy and combine the javascript from ./src/  
+   - minifiy and combine the css from ./src  
+   - build the splash.html from dust templates  
+   
+These operations are configured in Gruntfile.js
 
-Some of the content is dynamically loaded from the server via theses items in splash.html
+Some of the content is dynamically loaded from the server (as opposed to the router).  
+
+The file config/config.json feeds the dust template to set these variables which are later set in the HMLT to be passed to
+ptp-splash-server.min.js
 
     <script>
         var nodeName = 'PTP_NODE_PTP';
@@ -109,4 +120,8 @@ https://personaltelco.net/wiki/NewCaptivePortalFeatures
 more on captive portals....  
 
 https://personaltelco.net/wiki/CaptivePortal
+
+tools used:
+       Bootstrap - http://getbootstrap.com
+       Dust - http://linkedin.github.io/dustjs
 

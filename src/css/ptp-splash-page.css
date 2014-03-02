@@ -98,7 +98,8 @@ body {
 ------------------- */
 
 #donorCol {
-    position: relative;   
+    position: relative;
+    height:  20em;
 }
 
 .happyIcon {

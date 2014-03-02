@@ -4,6 +4,7 @@ module.exports = function(grunt) {
     grunt
             .initConfig({
                 pkg : grunt.file.readJSON('package.json'),
+                config : grunt.file.readJSON('config/config.json'),
                 jshint : {
                     jshintrc : '.jshintrc',
                     all : [ 'Gruntfile.js', '*.js', 'lib/*.js', 'src/*.js' ]
@@ -36,18 +37,25 @@ module.exports = function(grunt) {
                         }
                     }
                 },
-                exec : {
-                    ssh_publish : {
-                        cmd : "scp -r htdocs/* grankremote:/www/"
+                dusthtml: {
+                    dist: {
+                      src: "src/dust/splash.dust.html",
+                      dest: "htdocs/splash.html",
+                      options: {
+                          context: [
+                                    { config: '<%= config %>'},
+                                    { pkg: '<%= pkg %>'},
+                                    { banner : '/*! <%= pkg.name %> - v<%= pkg.version %> - <%= grunt.template.today("yyyy-mm-dd hh:MM") %> */\n'}
+                                    ]
+                      }
                     }
-                },
-
+                  },
                 watch : {
                     scripts : {
-                        files : [ 'src/js/*.js', 'src/dustjs/*.html',
+                        files : [ 'src/js/*.js', 'src/dust/*.html',
                                 'src/css/*.css',
-                                'htdocs/*.html' ],
-                        tasks: ['uglify','cssmin'],
+                                'config/*.json' ],
+                        tasks: ['uglify', 'cssmin', 'dusthtml'],
                         options : {
                             spawn : false,
                             livereload : false,
@@ -59,14 +67,13 @@ module.exports = function(grunt) {
     // Load the plugin that provides the "uglify" task.
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
-    grunt.loadNpmTasks('grunt-exec');
-
+    grunt.loadNpmTasks("grunt-dust-html");
     grunt.loadNpmTasks('grunt-contrib-watch');
 
     grunt.loadNpmTasks('grunt-nodemon');
     grunt.loadNpmTasks('grunt-contrib-jshint');
 
     // Default task(s).
-    grunt.registerTask('default', [ 'uglify', 'cssmin' ]);
+    grunt.registerTask('default', [ 'uglify', 'cssmin', 'dusthtml' ]);
 
 };
