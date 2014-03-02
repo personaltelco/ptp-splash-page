@@ -63,9 +63,9 @@ function internetWorks(cb) {
     // test wikipedia
     
     console.log('internet works');
-    $("#staticworks").text("Dynamic content successfully loaded from " + staticserver);
+    $("#staticworks").text("Dynamic content successfully loaded from " + pageConf.staticserver);
     $("#staticworks").removeClass('text-danger');
-    $("#statusSidebarWords").text("connected");
+    $("#statusSidebarWords").text('connected');
     $("#statusSidebarWords").removeClass('text-danger')
             .addClass('text-success');
     $("#statusSidebarIcons").html('<i class="fa fa-sitemap text-success"></i>');
