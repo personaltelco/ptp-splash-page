@@ -1,7 +1,7 @@
 ptp-splash-page
 =============
 
-As part of the [PTP SplashPage2014](https://github.com/personaltelco/ptp-splash-page) effort...
+As part of the [PTP SplashPage2014](https://personaltelco.net/wiki/SplashPage2014) effort...
 
 The Personal Telco Project's splash page that user's see when they connect to a node and get redirected by the 'captive portal' 
 
