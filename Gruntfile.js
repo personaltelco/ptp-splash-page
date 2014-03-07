@@ -41,6 +41,7 @@ module.exports = function(grunt) {
                       src: "src/dust/splash.dust.html",
                       dest: "htdocs/splash.html",
                       options: {
+                          whitespace: true,
                           context: [
                                     { config: '<%= config %>'},
                                     { pkg: '<%= pkg %>'},
