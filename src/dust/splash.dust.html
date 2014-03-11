@@ -19,7 +19,7 @@
 
     <!-- Custom styles for this template -->
     <link href="css/ptp-splash-page.min.css" rel="stylesheet">
-    <link href="http://{config.staticserver}/css/ptp-splash-server.min.css" rel="stylesheet">
+    <link href="{config.staticbaseurl}/css/ptp-splash-server.min.css" rel="stylesheet">
   </head>
   <body data-spy="scroll" data-target="#ptpnav" data-offset="60">
 	  <!-- NAVBAR ================================================== -->
@@ -616,12 +616,14 @@
                 node: 'PTP_NODE_PTP',
                 nodeName: 'PTP_NODENAME_PTP',
                 version: '{pkg.version}',
+                apiserver: '{config.apiserver}',
+                apibaseurl: '{config.apibaseurl}',
                 staticserver: '{config.staticserver}',
-                apiserver: '{config.apiserver}'
+                staticbaseurl: '{config.staticbaseurl}'
         };
     </script>
     <!-- Bootstrap core JavaScript and Splash Page JS bundled together -->
     <script src="js/ptp-splash-page.min.js"></script>
-    <script src="http://{config.staticserver}/js/ptp-splash-server.min.js"></script>
+    <script src="{config.staticbaseurl}/js/ptp-splash-server.min.js"></script>
   </body>
 </html>
