@@ -30,7 +30,7 @@ module.exports = function(grunt) {
                         },
                         files : {
                             'htdocs/css/<%= pkg.name %>.min.css' : [
-                                    'src/css/font-awesome-4.0.3/css/font-awesome.css',
+                                    'src/css/font-awesome-4.0.3/css/font-awesome-ptp-cleaned.css',
                                     'src/css/ptp-splash-page.css',
                                     'src/css/bootstrap.min.css' ]
                         }
@@ -69,8 +69,6 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-cssmin');
     grunt.loadNpmTasks("grunt-dust-html");
     grunt.loadNpmTasks('grunt-contrib-watch');
-
-    grunt.loadNpmTasks('grunt-nodemon');
     grunt.loadNpmTasks('grunt-contrib-jshint');
 
     // Default task(s).
