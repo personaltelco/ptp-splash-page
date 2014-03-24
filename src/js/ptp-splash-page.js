@@ -31,32 +31,32 @@ function donorOptOut() {
     });
 }
 
-var further = 50;
 function smoothScrolling() {
     // a bootstrap feature which needs resetting after any manipulation of the DOM
-    $("a[href^='#']").each(function() {
+    $(".internallink").each(function() {
 		// store hash
 		var self = this;
         var hash = self.hash;
 		console.log('hash: ' + hash);
+		var further = 0;
 		if (hash == '#home' || hash == '#Carousel') {
-
-		} else {
-		    $(self).unbind( "click" ); // get rid of the existing click event
-		    // animate
-		    $(self).on('click', function(e) {
-		        
-		        // prevent default anchor click behavior
-		        e.preventDefault();
-    		    $('html, body').animate({
-    		        scrollTop : $(self.hash).offset().top - further
-    		    }, 1250, function() {
-    		        // when done, add hash to url
-    		        // (default click behaviour)
-    		        window.location.hash = hash;
-    		    });
-		    });
+		    further = 50;
 		}
+		// animate
+		$(self).unbind( "click" ); // get rid of the existing click event
+	    $(self).on('click', function(e) {
+	        // prevent default anchor click behavior
+	        e.preventDefault();
+		    $('html, body').animate({
+		        scrollTop : $(self.hash).offset().top - further
+		    }, 1250, function() {
+		        // when done, add hash to url
+		        // (default click behaviour)
+		        if (hash != '#home') {
+		            window.location.hash = hash;
+		        }
+		    });
+	    });
 
 	});
 }
