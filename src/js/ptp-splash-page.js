@@ -33,6 +33,7 @@ function donorOptOut() {
 
 function smoothScrolling() {
     // a bootstrap feature which needs resetting after any manipulation of the DOM
+    $("a[href^='#']").unbind( "click" ); // get rid of the existing click event
     $("a[href^='#']").on('click', function(e) {
 
 		// prevent default anchor click behavior
