@@ -176,31 +176,6 @@ body {
 /* RESPONSIVE CSS
 -------------------------------------------------- */
 
-@media only screen and (max-device-width: 768px) {
-
-	/* carousel height adjusted to 700
-	-------------------------------------------------- */
-	
-	/* Carousel base class */
-	.carousel {
-	  height: 630px;
-	}
-	
-	/* Declare heights because of positioning of img element */
-	.carousel .item {
-	  height: 630px;
-	}
-	.carousel-inner > .item > img {
-	  height: 630px;
-	}
-	
-	.carousel-control {
-	  height: 680px;
-	}
-
-}
-
-
 @media (min-width: 768px) {
 
   /* Remove the edge padding needed for mobile */
@@ -240,8 +215,4 @@ body {
 
 }
 
-@media (min-width: 992px) {
-  .featurette-heading {
 
-  }
-}
