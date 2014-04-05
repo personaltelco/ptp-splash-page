@@ -8,6 +8,8 @@ $(document).ready(function() {
 
 	internetWorks();
 
+	fixMissingNodeLogo('#NodeLogo','images/ptp-logo-41x80.png');
+	
 });
 
 function donorOptOut() {
@@ -77,5 +79,12 @@ function internetWorks() {
     // tempting to load some overall network stats
     // number of nodes active
     // number of connected users
+}
+
+
+function fixMissingImage(elem, img) {
+    $(elem).error(function () {
+        $(this).unbind("error").attr("src", img);
+    });
 }
 
