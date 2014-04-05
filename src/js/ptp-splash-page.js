@@ -23,11 +23,11 @@ function donorOptOut() {
         
         if ($('#optoutpublic').is(':checked')) {
             console.log('donor is opting out');
-            $('#item_number').val('splash2014_opt_out');
+            $('#item_number').val('splash2014_opt_out_' + pageConf.node);
             $('#item_name').val('Personal Telco Project - Anonymous Donation');
         } else {
             console.log('donor is opting in');
-            $('#item_number').val('splash2014');
+            $('#item_number').val('splash2014_' + pageConf.node);
             $('#item_name').val('Personal Telco Project - Donation');
         }
     });
