@@ -41,10 +41,6 @@ folks to easily understand which piece of the puzzle should be worked on at each
     git clone git@github.com:personaltelco/ptp-splash-page.git
 ````
 
-If you're just looking to deploy the splash page to a router then there is no need to 
-setup the build the environment.  Everything is in htdocs and those are just
-static files.
-
 ### development dependencies
 
 A recent nodejs environment is required.  If you're on Ubuntu 12.04 these instructions will be helpful:
@@ -88,7 +84,7 @@ These operations are configured in Gruntfile.js
 
 Some of the content is dynamically loaded from the server (as opposed to the router).  
 
-The file config/config.json feeds the dust template to set these variables which are later set in the HMLT to be passed to
+The file config/config.json feeds the dust template to set these variables which are later set in the HTML to be passed to
 ptp-splash-server.min.js
 
     <script>
