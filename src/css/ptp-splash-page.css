@@ -42,10 +42,6 @@ body {
   height: 500px;
 }
 
-.carousel-control {
-  height: 550px;
-}
-
 .col-centered, .col-centered p {
     text-align: center;
     padding-bottom: 5px;
