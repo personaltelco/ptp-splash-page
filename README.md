@@ -15,7 +15,7 @@ an opportunity:
 Build Procedure
 ---------------
 
-Node.js and Yarn are required.
+Node.js is required.
 
 The build produces two artifacts: `splash.min.js` and `splash.min.css`.
 These are compiled from files in the `src` directory with the assistance of
@@ -30,10 +30,10 @@ To perform a build:
 You can run a small webserver to test locally:
 
 ````bash
-yarn server
+npm run server
 ````
 
-Additional Yarn commands are listed in `package.json`.
+Additional npm script commands are listed in `package.json`.
 
 
 Design Notes

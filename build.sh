@@ -4,18 +4,16 @@
 
 set -ex
 
-yarn install
+npm install --frozen-lockfile
 
 
 rm -rf checkstyle-*.xml coverage-js htdocs/*.min.* junit.xml
 
-yarn -s test || true
+npm -s run pkglint || true
 
-yarn -s pkglint || true
-
-yarn -s lint --format node_modules/eslint-formatter-checkstyle-* \
+npm -s run lint -- --format node_modules/eslint-formatter-checkstyle-* \
      > checkstyle-eslint.xml || true
 
-yarn -s build
+npm -s run build
 
 exit 0
